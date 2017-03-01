@@ -1,0 +1,27 @@
+D:\projects\4 term\lab1\lab1\bin\Debug\lab1.exe.config
+D:\projects\4 term\lab1\lab1\bin\Debug\lab1.exe
+D:\projects\4 term\lab1\lab1\bin\Debug\lab1.pdb
+D:\projects\4 term\lab1\lab1\obj\Debug\lab1.csprojResolveAssemblyReference.cache
+D:\projects\4 term\lab1\lab1\obj\Debug\lab1.exe
+D:\projects\4 term\lab1\lab1\obj\Debug\lab1.pdb
+D:\projects\4 term\lab1-2\lab1\bin\Debug\lab1.exe.config
+D:\projects\4 term\lab1-2\lab1\obj\Debug\lab1.exe
+D:\projects\4 term\lab1-2\lab1\obj\Debug\lab1.pdb
+C:\Users\Egor\Desktop\.NET-labs-master\lab1-2\lab1\bin\Debug\lab1.exe.config
+C:\Users\Egor\Desktop\.NET-labs-master\lab1-2\lab1\obj\Debug\lab1.exe
+C:\Users\Egor\Desktop\.NET-labs-master\lab1-2\lab1\obj\Debug\lab1.pdb
+C:\Users\Egor\Desktop\.NET-labs-master\lab1-2\lab1\bin\Debug\lab1.exe
+C:\Users\Egor\Desktop\.NET-labs-master\lab1-2\lab1\bin\Debug\lab1.pdb
+C:\Users\Egor\Desktop\.NET-labs-master\lab1-2\lab1\obj\Debug\lab1.csprojResolveAssemblyReference.cache
+e:\учеба2курс\2сем\ООП\Лабораторная работа 1\lab1\lab1\bin\Debug\lab1.exe.config
+e:\учеба2курс\2сем\ООП\Лабораторная работа 1\lab1\lab1\obj\Debug\lab1.exe
+e:\учеба2курс\2сем\ООП\Лабораторная работа 1\lab1\lab1\obj\Debug\lab1.pdb
+e:\учеба2курс\2сем\ООП\Лабораторная работа 1\lab1\lab1\bin\Debug\lab1.exe
+e:\учеба2курс\2сем\ООП\Лабораторная работа 1\lab1\lab1\bin\Debug\lab1.pdb
+e:\учеба2курс\2сем\ООП\Лабораторная работа 1\lab1\lab1\obj\Debug\lab1.csprojResolveAssemblyReference.cache
+e:\учеба2курс\2сем\С# labs\Лабораторная работа 1\lab1\lab1\bin\Debug\lab1.exe.config
+e:\учеба2курс\2сем\С# labs\Лабораторная работа 1\lab1\lab1\obj\Debug\lab1.exe
+e:\учеба2курс\2сем\С# labs\Лабораторная работа 1\lab1\lab1\obj\Debug\lab1.pdb
+e:\учеба2курс\2сем\С# labs\Лабораторная работа 1-2\lab1\lab1\bin\Debug\lab1.exe.config
+e:\учеба2курс\2сем\С# labs\Лабораторная работа 1-2\lab1\lab1\obj\Debug\lab1.exe
+e:\учеба2курс\2сем\С# labs\Лабораторная работа 1-2\lab1\lab1\obj\Debug\lab1.pdb
