@@ -1,1 +1,6 @@
 E:\учеба2курс\4сем\OOP\C-sharp_labs\lab4\lab4\bin\Debug\lab4.exe.config
+e:\учеба2курс\4сем\OOP\C-sharp_labs\lab4\lab4\bin\Debug\lab4.exe
+e:\учеба2курс\4сем\OOP\C-sharp_labs\lab4\lab4\bin\Debug\lab4.pdb
+e:\учеба2курс\4сем\OOP\C-sharp_labs\lab4\lab4\obj\Debug\lab4.csprojResolveAssemblyReference.cache
+e:\учеба2курс\4сем\OOP\C-sharp_labs\lab4\lab4\obj\Debug\lab4.exe
+e:\учеба2курс\4сем\OOP\C-sharp_labs\lab4\lab4\obj\Debug\lab4.pdb

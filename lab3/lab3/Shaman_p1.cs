@@ -22,9 +22,9 @@ namespace lab3
         }
 
         public override string ToString() =>
-           $"Shaman {WhatType()} Level:{Level} Dexterity:{Dexterity} HP:{HP} Mana:{Mana} Damage:{Damage}";
+           $"Shaman Level={Level} Dexterity={Dexterity} HP={HP} Mana={Mana} Damage={Damage}";
 
-        private Shaman() : base("shaman", h, d, dex) { }
+        public Shaman() : base("shaman", h, d, dex) { }
 
         public int Mana
         {
@@ -34,6 +34,11 @@ namespace lab3
                 if (value < 400) { throw new InvalidParam("property 'mana' can not be less then 400"); }
                 else { mana = value; }
             }
+        }
+
+        public void Go(Fighter obj)
+        {
+            Console.WriteLine("~~~Shaman идёт");
         }
 
         protected override void LevelUP(int level)
@@ -52,6 +57,18 @@ namespace lab3
             Mana      = Convert.ToInt32(Mana / m);
         }
 
+        public Memento SaveState()
+        {
+            Console.WriteLine("Saving the game with saham level = {0} ", Level);
+            return new Memento(Level);
+        }
+
+        public void RestoreState(Memento memento)
+        {
+            Level = memento.Level;
+            Console.WriteLine("Restoring the game with shaman level = {0}", Level);
+        }
+
         public static Shaman operator +(Shaman obj, int level)
         {
             obj.Level += level;
@@ -66,5 +83,6 @@ namespace lab3
             }
             return obj;
         }
+
     }
 }

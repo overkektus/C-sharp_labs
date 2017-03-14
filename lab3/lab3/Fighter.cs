@@ -29,7 +29,7 @@ namespace lab3
         protected abstract void LevelDOWN(int level);
         public abstract void WriteToFile();
         public virtual string WhatType() { return type; }
-
+        
         public string FighterType { get; protected set; }
 
         public int Level

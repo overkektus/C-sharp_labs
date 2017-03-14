@@ -8,6 +8,6 @@ namespace lab3
 {
     interface IAction
     {
-
+        void Go(Fighter obj);
     }
 }

@@ -13,7 +13,7 @@ namespace lab3
         public Hunter() : base("hunter", h, d, dex) { }
 
         public override string ToString() => 
-            $"Hunter {WhatType()} Level:{Level} Dexterity:{Dexterity} HP:{HP} Damage:{Damage}";
+            $"Hunter Level={Level} Dexterity={Dexterity} HP={HP} Damage={Damage}";
 
         public override int GetHashCode()
         {
@@ -33,6 +33,11 @@ namespace lab3
                 this.HP == obj.HP && this.Level == obj.Level)
                 return true;
             else return false;
+        }
+
+        public void Go(Fighter obj)
+        {
+            Console.WriteLine("~~~Huter идёт");
         }
 
         public override string WhatType()
@@ -67,6 +72,23 @@ namespace lab3
                 obj.Level += level;
             }
             return obj;
+        }
+
+        public static bool operator < (Hunter h, Fighter f)
+        {
+            return h.HP < f.HP;
+        }
+        public static bool operator > (Hunter h, Fighter f)
+        {
+            return h.HP > f.HP;
+        }
+        public static bool operator == (Hunter h, Fighter f)
+        {
+            return h.HP == f.HP;
+        }
+        public static bool operator != (Hunter h, Fighter f)
+        {
+            return h.HP != f.HP;
         }
     }
 }
