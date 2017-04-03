@@ -6,7 +6,7 @@ using System.Text;
 using System.Threading.Tasks;
 
 namespace lab4 {
-    class Prism : IComparable
+    class Prism : IComparable, IEnumerable
     {
         private const string figureType = "Prism";
         private int baseSide;
@@ -108,6 +108,11 @@ namespace lab4 {
 
         public override int GetHashCode() {
             return BaseSide.GetHashCode() + Height.GetHashCode() + NumberOfEdges.GetHashCode();
+        }
+
+        public IEnumerator GetEnumerator()
+        {
+            throw new NotImplementedException();
         }
 
         ~Prism() {

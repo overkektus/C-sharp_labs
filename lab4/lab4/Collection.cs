@@ -8,7 +8,8 @@ using System.Threading.Tasks;
 
 namespace lab4
 {
-    class Collection<T> : IEnumerable
+    class Collection<T>: IEnumerable
+         where T: new()
     {
         IEnumerator IEnumerable.GetEnumerator()
         {
@@ -20,18 +21,6 @@ namespace lab4
         public Collection()
         {
             collect = new List<T>();
-        }
-
-        public T this [int i]
-        {
-            get
-            {
-                return collect.ElementAt<T>(i);
-            }
-            set
-            {
-                collect.Insert(i, value);
-            }
         }
 
         public void Add(T el)
@@ -47,6 +36,18 @@ namespace lab4
         public void InsertAt(T el, int i)
         {
             collect.Insert(i, el);
+        }
+
+        public T this[int i]
+        {   
+            get
+            {
+                return collect.ElementAt<T>(i);
+            }
+            set
+            {
+                collect.Insert(i, value);
+            }
         }
 
         public void Remove(T el)
@@ -108,9 +109,42 @@ namespace lab4
             }
         }
 
+        public static int GetMinCollectionCount(Collection<T>[] arr)
+        {
+            try
+            {
+                int minCount = arr[0].Count();
+                foreach (Collection<T> item in arr)
+                {
+                    if (item.Count() < minCount)
+                    {
+                        minCount = item.Count();
+                    }
+                }
+                return minCount;
+            }
+            catch (Exception)
+            {
+                return 0;
+            }
+        }
+
+        public void WriteToFile()
+        {
+            Stream stream;
+            using (stream = File.Open(@"\collection.txt", FileMode.Create, FileAccess.Write))
+            {
+                foreach (T item in collect)
+                {
+                    File.AppendAllText("collection.txt", item.ToString() + "\r\n");
+                }
+            }
+        }
+
         public bool Exists(Predicate<T> predicate)
         {
             return !(collect.Exists(predicate));
         }
+       
     }
 }
