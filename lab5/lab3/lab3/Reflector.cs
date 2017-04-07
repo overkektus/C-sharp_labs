@@ -14,7 +14,6 @@ namespace lab3
         static public void Write(string cs)
         {
             Type myType = Type.GetType("lab3." + cs, false, true);
-
             File.WriteAllText("a.txt", "\tМетоды класса " + myType.Name + ":");
             foreach (MethodInfo m in myType.GetRuntimeMethods())
             {
@@ -23,7 +22,10 @@ namespace lab3
                     mod += "static ";
                 if (m.IsVirtual)
                     mod += "virtual ";
-                File.AppendAllText("a.txt", "\r\n" + mod + m.ReturnType.Name + " " + m.Name + " (");
+                if (mod != "")
+                    File.AppendAllText("a.txt", "\r\n" + mod + "~ " + m.ReturnType.Name + " " + m.Name + " (");
+                else
+                    File.AppendAllText("a.txt", "\r\n" + mod + "\t  " + m.ReturnType.Name + " " + m.Name + " (");
                 // Get all params
                 ParameterInfo[] parameters = m.GetParameters();
                 for (int i = 0; i < parameters.Length; i++)
@@ -108,7 +110,7 @@ namespace lab3
         static public void ReadArgsMethodFromFile(string className, string methodName)
         {
             XmlDocument doc = new XmlDocument();
-            doc.Load("6.Method.xml");
+            doc.Load("f.xml");
             XmlNodeList ordersList = doc.DocumentElement.ChildNodes;
 
             object[] param = new object[4];

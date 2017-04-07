@@ -88,11 +88,12 @@ namespace lab3
 
                 Console.ReadLine();
 
-                Reflector.Write("Fighter");
-                Reflector.WriteAllPublicMethods("IAtack");
-                Reflector.WriteFieldAndProperties("Memento");
-                Reflector.WriteImplementedInterfaces("Hunter");
-                Reflector.WriteNameOfMethodsWithSpecifiedType("Game", "Fighter");
+                Reflector.Write("Fighter");                                       //a
+                Reflector.WriteAllPublicMethods("IAtack");                        //b
+                Reflector.WriteFieldAndProperties("Memento");                     //c
+                Reflector.WriteImplementedInterfaces("Hunter");                   //d
+                Reflector.WriteNameOfMethodsWithSpecifiedType("Game", "Fighter"); //e
+                Reflector.ReadArgsMethodFromFile("lab3.MyClass", "Color_Message");//f
             }
         }
         static void Attack(object o, GameEventArgs e)
