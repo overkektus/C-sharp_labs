@@ -67,7 +67,7 @@ namespace lab3
 
                 Game game = new Game();
 
-                game.Attacked += Attack;
+                game.Attacked += Attack; //добавляем обработчик события
                 Console.WriteLine("\t~~~~~Событие Attacked~~~~~");
                 Console.WriteLine(hunter1.ToString());
                 Console.WriteLine(shaman.ToString());

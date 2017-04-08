@@ -8,9 +8,9 @@ namespace lab3
 {
     class Game
     {
-        public delegate void MyEventHendler(object o, GameEventArgs e);
-        public event MyEventHendler Attacked;
-        public event MyEventHendler Treated;
+        public delegate void MyEventHendler(object o, GameEventArgs e); //Объявление делегата
+        public event MyEventHendler Attacked; //объявление событие атаки
+        public event MyEventHendler Treated;  //объявление событие лечить
 
         public void Battle(Fighter _fighter1, Fighter _fighter2)
         {
