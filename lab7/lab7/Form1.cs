@@ -25,6 +25,9 @@ namespace lab7
         {
             InitializeComponent();
             DateTimePicker_Maintenance.Format = DateTimePickerFormat.Short;
+            DateTimePicker_Maintenance.MaxDate = DateTime.Today;
+            DateTimePicker_Maintenance.MinDate = DateTime.Today.AddDays(-14);
+            DateTimePicker_Maintenance.Value = DateTime.Today;
 
             airport = new Airport();
         }
@@ -81,7 +84,7 @@ namespace lab7
                     airplane.Model = Convert.ToString(ComboBox_model.SelectedItem);
                     airplane.Year_of_issue = Convert.ToInt16(NumericUpDown_yearIssue.Value);
                     airplane.Carrying = Convert.ToInt16(CarryingСapacity.Text);
-                    airplane.Maintenance = Convert.ToDateTime(DateTimePicker_Maintenance.Value);
+                    airplane.Maintenance = DateTimePicker_Maintenance.Value.ToString("dd.MM.yyyy");
                     airplane.Seats = Convert.ToInt16(MaskedTextBox_seats.Text);
 
                     airport.Add(airplane);
