@@ -9,7 +9,8 @@ namespace lab7
 {
     class Airport : IEnumerable 
     {
-        private List<Airplane> listAirplane = new List<Airplane>();
+        public IList<Airplane> listAirplane = new List<Airplane>();
+
 
         public void Add(Airplane plane)
         {

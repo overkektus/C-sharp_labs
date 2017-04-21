@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 using System.IO;
 using System.Runtime.Serialization;
 using Newtonsoft.Json;
+using System.Collections;
 
 namespace lab7
 {
@@ -19,6 +20,47 @@ namespace lab7
         public Int16 Carrying { get; set; }
         public DateTime Maintenance { get; set; }
 
+        public List<Member> listMember = new List<Member>();
+
+        public void Add(Member member)
+        {
+            listMember.Add(member);
+        }
+
+        public void RemoveAt(int i)
+        {
+            listMember.RemoveAt(i);
+        }
+
+        public int Count()
+        {
+            return listMember.Count();
+        }
+
+        public void Clear()
+        {
+            listMember.Clear();
+        }
+
+        /*
+        IEnumerator IEnumerable.GetEnumerator()
+        {
+            return listMember.GetEnumerator();
+        }
+        */
+
+        public Member this[int index]
+        {
+            get
+            {
+                return listMember[index];
+            }
+            set
+            {
+                listMember[index] = value;
+            }
+        }
+
         public Airplane() { }
 
         public Airplane(Int16 id, String type, String model, Int16 year_of_issue, Int16 seats, Int16 carrying, DateTime maintenance)
@@ -30,12 +72,6 @@ namespace lab7
             Seats = seats;
             Carrying = carrying;
             Maintenance = maintenance;
-        }
-
-        public static string Save(Airplane plane)
-        {
-            string json = JsonConvert.SerializeObject(plane);
-            return json;
         }
 
         public override string ToString()
@@ -51,9 +87,5 @@ namespace lab7
             return result;
         }
 
-        public static void Load()
-        {
-
-        }
     }
 }
