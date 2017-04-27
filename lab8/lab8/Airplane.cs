@@ -12,6 +12,7 @@ namespace lab7
 {
     class Airplane
     {
+        public List<Member> listMember;
         public Int16 Id { get; set; }
         public String Type { get; set; }
         public String Model { get; set; }
@@ -19,8 +20,6 @@ namespace lab7
         public Int16 Seats { get; set; }
         public Int16 Carrying { get; set; }
         public String Maintenance { get; set; }
-
-        public List<Member> listMember = new List<Member>();
 
         public void Add(Member member)
         {
@@ -42,12 +41,6 @@ namespace lab7
             listMember.Clear();
         }
 
-        /*
-        IEnumerator IEnumerable.GetEnumerator()
-        {
-            return listMember.GetEnumerator();
-        }
-        */
 
         public Member this[int index]
         {
@@ -61,7 +54,10 @@ namespace lab7
             }
         }
 
-        public Airplane() { }
+        public Airplane()
+        {
+            new List<Member>();
+        }
 
         public Airplane(Int16 id, String type, String model, Int16 year_of_issue, Int16 seats, Int16 carrying, String maintenance)
         {

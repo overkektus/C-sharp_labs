@@ -77,6 +77,10 @@
             this.Sort_ToolStripMenuItem_nameCapitan = new System.Windows.Forms.ToolStripMenuItem();
             this.Sort_ToolStripMenuItem_nameSecondPilot = new System.Windows.Forms.ToolStripMenuItem();
             this.Sort_ToolStripMenuItem_ = new System.Windows.Forms.ToolStripMenuItem();
+            this.AboutToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.DataGridAirplane = new System.Windows.Forms.DataGridView();
+            this.airportBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.DataGridMember = new System.Windows.Forms.DataGridView();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.TrackBar_Carrying)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.NumericUpDown_yearIssue)).BeginInit();
@@ -85,6 +89,9 @@
             ((System.ComponentModel.ISupportInitialize)(this.NumericUpDown_age)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.Error)).BeginInit();
             this.menuStrip.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.DataGridAirplane)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.airportBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.DataGridMember)).BeginInit();
             this.SuspendLayout();
             // 
             // TextBox_ID
@@ -536,9 +543,9 @@
             // 
             // TextBox_JSON
             // 
-            this.TextBox_JSON.Location = new System.Drawing.Point(436, 70);
+            this.TextBox_JSON.Location = new System.Drawing.Point(862, 434);
             this.TextBox_JSON.Name = "TextBox_JSON";
-            this.TextBox_JSON.Size = new System.Drawing.Size(393, 356);
+            this.TextBox_JSON.Size = new System.Drawing.Size(393, 48);
             this.TextBox_JSON.TabIndex = 20;
             this.TextBox_JSON.Text = "";
             // 
@@ -546,10 +553,11 @@
             // 
             this.menuStrip.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.поискToolStripMenuItem,
-            this.сортировкаToolStripMenuItem});
+            this.сортировкаToolStripMenuItem,
+            this.AboutToolStripMenuItem});
             this.menuStrip.Location = new System.Drawing.Point(0, 0);
             this.menuStrip.Name = "menuStrip";
-            this.menuStrip.Size = new System.Drawing.Size(841, 24);
+            this.menuStrip.Size = new System.Drawing.Size(1301, 24);
             this.menuStrip.TabIndex = 21;
             this.menuStrip.Text = "menuStrip1";
             // 
@@ -609,11 +617,41 @@
             this.Sort_ToolStripMenuItem_.Size = new System.Drawing.Size(190, 22);
             this.Sort_ToolStripMenuItem_.Text = "Дата последнего ТО";
             // 
+            // AboutToolStripMenuItem
+            // 
+            this.AboutToolStripMenuItem.Name = "AboutToolStripMenuItem";
+            this.AboutToolStripMenuItem.Size = new System.Drawing.Size(94, 20);
+            this.AboutToolStripMenuItem.Text = "О программе";
+            this.AboutToolStripMenuItem.Click += new System.EventHandler(this.AboutToolStripMenuItem_Click);
+            // 
+            // DataGridAirplane
+            // 
+            this.DataGridAirplane.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.DataGridAirplane.Location = new System.Drawing.Point(436, 80);
+            this.DataGridAirplane.Name = "DataGridAirplane";
+            this.DataGridAirplane.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
+            this.DataGridAirplane.Size = new System.Drawing.Size(860, 122);
+            this.DataGridAirplane.TabIndex = 22;
+            // 
+            // airportBindingSource
+            // 
+            this.airportBindingSource.DataSource = typeof(lab7.Airport);
+            // 
+            // DataGridMember
+            // 
+            this.DataGridMember.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.DataGridMember.Location = new System.Drawing.Point(436, 267);
+            this.DataGridMember.Name = "DataGridMember";
+            this.DataGridMember.Size = new System.Drawing.Size(715, 135);
+            this.DataGridMember.TabIndex = 23;
+            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(841, 486);
+            this.ClientSize = new System.Drawing.Size(1301, 486);
+            this.Controls.Add(this.DataGridMember);
+            this.Controls.Add(this.DataGridAirplane);
             this.Controls.Add(this.TextBox_JSON);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.clear);
@@ -638,6 +676,9 @@
             ((System.ComponentModel.ISupportInitialize)(this.Error)).EndInit();
             this.menuStrip.ResumeLayout(false);
             this.menuStrip.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.DataGridAirplane)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.airportBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.DataGridMember)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -693,6 +734,10 @@
         private System.Windows.Forms.ToolStripMenuItem Sort_ToolStripMenuItem_nameCapitan;
         private System.Windows.Forms.ToolStripMenuItem Sort_ToolStripMenuItem_nameSecondPilot;
         private System.Windows.Forms.ToolStripMenuItem Sort_ToolStripMenuItem_;
+        private System.Windows.Forms.ToolStripMenuItem AboutToolStripMenuItem;
+        private System.Windows.Forms.DataGridView DataGridAirplane;
+        private System.Windows.Forms.BindingSource airportBindingSource;
+        private System.Windows.Forms.DataGridView DataGridMember;
     }
 }
 

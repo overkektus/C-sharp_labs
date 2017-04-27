@@ -36,17 +36,17 @@ namespace Calculator
 
         private void button3_Click(object sender, EventArgs e)
         {
-            textBox1.Text += "4";
+            textBox1.Text += "3";
         }
 
         private void button4_Click(object sender, EventArgs e)
         {
-            textBox1.Text += "5";
+            textBox1.Text += "4";
         }
 
         private void button5_Click(object sender, EventArgs e)
         {
-            textBox1.Text += "3";
+            textBox1.Text += "5";
         }
 
         private void button6_Click(object sender, EventArgs e)
@@ -69,7 +69,7 @@ namespace Calculator
             textBox1.Text += "9";
         }
 
-        private void button10_Click(object sender, EventArgs e)
+        private void button0_Click(object sender, EventArgs e)
         {
             textBox1.Text += "0";
         }
@@ -158,7 +158,7 @@ namespace Calculator
             catch (Exception) { }
         }
 
-        private void button17_Click(object sender, EventArgs e) //+
+        private void Plus_Click(object sender, EventArgs e) //+
         {
             try
             {
@@ -169,7 +169,7 @@ namespace Calculator
             catch(Exception) { }
         }
 
-        private void button18_Click(object sender, EventArgs e) //-
+        private void Minus_Click(object sender, EventArgs e) //-
         {
             try
             {
@@ -221,9 +221,5 @@ namespace Calculator
             catch (Exception) { }
         }
 
-        private void textBox1_TextChanged(object sender, EventArgs e)
-        {
-
-        }
     }
 }

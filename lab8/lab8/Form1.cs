@@ -15,21 +15,48 @@ namespace lab7
     public partial class MainForm : Form
     {
         Airport airport;
+        List<Airplane> desAir;
         Airplane airplane;
         Member member;
 
+        int currentRowAirplane;
+        int currentRowMember;
         string deletedItem;
         string deletedMember;
 
         public MainForm()
         {
             InitializeComponent();
+            GridInit();
+
             DateTimePicker_Maintenance.Format = DateTimePickerFormat.Short;
             DateTimePicker_Maintenance.MaxDate = DateTime.Today;
             DateTimePicker_Maintenance.MinDate = DateTime.Today.AddDays(-14);
             DateTimePicker_Maintenance.Value = DateTime.Today;
 
             airport = new Airport();
+        }
+
+        private void GridInit()
+        {
+
+            for (int x = 0; x < 7; x++)
+            {
+                DataGridViewTextBoxColumn Column = new DataGridViewTextBoxColumn();
+                Column.Width = 115;
+                DataGridAirplane.Columns.Add(Column);
+            }
+            DataGridAirplane.Rows.Add("ID", "Тип", "Модель", "Год выпуска", "Кол-во мест", "Грузоподъёмность", "Дата последнего ТО");
+            currentRowAirplane = 0;
+
+            for(int i = 0; i < 4; i++)
+            {
+                DataGridViewTextBoxColumn Column1 = new DataGridViewTextBoxColumn();
+                Column1.Width = 160;
+                DataGridMember.Columns.Add(Column1);
+            }
+            DataGridMember.Rows.Add("Имя", "Должность", "Возраст", "Стаж");
+            currentRowMember = 0;
         }
 
         private void trackBar1_Scroll(object sender, EventArgs e)
@@ -52,12 +79,36 @@ namespace lab7
             String json = "";
             TextBox_JSON.Clear();
             json = File.ReadAllText(openFileDialog1.FileName);
+            airport.Clear();
+            desAir = JsonConvert.DeserializeObject<List<Airplane>>(json);
+            AddAllPlaneToGrid();            
             TextBox_JSON.AppendText(json);
         }
 
         private void clear_Click(object sender, EventArgs e)
         {
             TextBox_JSON.Clear();
+            RemovePlaneFromGrid();
+            RemoveMemberFromGrid();
+            airplane.Clear();
+        }
+        
+        private void RemovePlaneFromGrid()
+        {
+            for (int i = currentRowAirplane; i != 0; i--)
+            {
+                DataGridAirplane.Rows.RemoveAt(i);
+                currentRowAirplane--;
+            }
+        }
+
+        private void RemoveMemberFromGrid()
+        {
+            for (int i = currentRowMember; i != 0; i--)
+            {
+                DataGridMember.Rows.RemoveAt(i);
+                currentRowMember--;
+            }
         }
 
         private void saveFileDialog1_FileOk(object sender, CancelEventArgs e)
@@ -89,13 +140,87 @@ namespace lab7
                     ComboBox_Airplane.Items.Add(Convert.ToString(airplane.Id));
                     ComboBox_ListMembers.Items.Clear();
 
-
-//                    SuccessAdd success = new SuccessAdd();
-//                    success.Show();
+                    AddPlaneToGrid();
                 }
                 catch (Exception) { }
             }
         }
+
+        private void AddPlaneToGrid()
+        {
+            DataGridAirplane.Rows.Add();
+            currentRowAirplane++;
+
+            DataGridAirplane.Rows[currentRowAirplane].Cells[0].Value = airplane.Id;
+            DataGridAirplane.Rows[currentRowAirplane].Cells[1].Value = airplane.Type;
+            DataGridAirplane.Rows[currentRowAirplane].Cells[2].Value = airplane.Model;
+            DataGridAirplane.Rows[currentRowAirplane].Cells[3].Value = airplane.Year_of_issue;
+            DataGridAirplane.Rows[currentRowAirplane].Cells[4].Value = airplane.Seats;
+            DataGridAirplane.Rows[currentRowAirplane].Cells[5].Value = airplane.Carrying;
+            DataGridAirplane.Rows[currentRowAirplane].Cells[6].Value = airplane.Maintenance;
+        }
+
+        private void AddAllPlaneToGrid()
+        {
+            RemovePlaneFromGrid();
+
+            int countItem = desAir.Count();
+            int i = 0;
+
+            while (countItem != 0)
+            {
+                DataGridAirplane.Rows.Add();
+                currentRowAirplane++;
+
+                DataGridAirplane.Rows[currentRowAirplane].Cells[0].Value = desAir[i].Id;
+                DataGridAirplane.Rows[currentRowAirplane].Cells[1].Value = desAir[i].Type;
+                DataGridAirplane.Rows[currentRowAirplane].Cells[2].Value = desAir[i].Model;
+                DataGridAirplane.Rows[currentRowAirplane].Cells[3].Value = desAir[i].Year_of_issue;
+                DataGridAirplane.Rows[currentRowAirplane].Cells[4].Value = desAir[i].Seats;
+                DataGridAirplane.Rows[currentRowAirplane].Cells[5].Value = desAir[i].Carrying;
+                DataGridAirplane.Rows[currentRowAirplane].Cells[6].Value = desAir[i].Maintenance;
+
+                i++;
+                countItem--;
+            }
+        }
+
+        private void AddAllPlaneToGrid(Airport list)
+        {
+            RemovePlaneFromGrid();
+
+            int countItem = list.Count();
+            int i = 0;
+
+            while (countItem != 0)
+            {
+                DataGridAirplane.Rows.Add();
+                currentRowAirplane++;
+
+                DataGridAirplane.Rows[currentRowAirplane].Cells[0].Value = list[i].Id;
+                DataGridAirplane.Rows[currentRowAirplane].Cells[1].Value = list[i].Type;
+                DataGridAirplane.Rows[currentRowAirplane].Cells[2].Value = list[i].Model;
+                DataGridAirplane.Rows[currentRowAirplane].Cells[3].Value = list[i].Year_of_issue;
+                DataGridAirplane.Rows[currentRowAirplane].Cells[4].Value = list[i].Seats;
+                DataGridAirplane.Rows[currentRowAirplane].Cells[5].Value = list[i].Carrying;
+                DataGridAirplane.Rows[currentRowAirplane].Cells[6].Value = list[i].Maintenance;
+
+                i++;
+                countItem--;
+            }
+        }
+
+        private void AddMemberToGrid()
+        {
+            DataGridMember.Rows.Add();
+            currentRowMember++;
+
+            DataGridMember.Rows[currentRowMember].Cells[0].Value = member.Name;
+            DataGridMember.Rows[currentRowMember].Cells[1].Value = member.Position;
+            DataGridMember.Rows[currentRowMember].Cells[2].Value = member.Age;
+            DataGridMember.Rows[currentRowMember].Cells[3].Value = member.Experience;
+        }
+
 
         private void Button_DeleteAirplane_Click(object sender, EventArgs e)
         {
@@ -114,6 +239,7 @@ namespace lab7
                     }
                 }
             }
+            AddAllPlaneToGrid(airport);
         }
 
         private void ComboBox_Airplane_SelectedIndexChanged(object sender, EventArgs e)
@@ -172,6 +298,8 @@ namespace lab7
                     airplane.Add(member);
 
                     ComboBox_ListMembers.Items.Add(Convert.ToString(member.Name));
+
+                    AddMemberToGrid();
                 }
                 catch (Exception) { }
             }
@@ -265,5 +393,12 @@ namespace lab7
             deletedMember = Convert.ToString(ComboBox_ListMembers.SelectedItem);
         }
 
+        private void AboutToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            MessageBox.Show("\tlab8\n" + "© Пискунов Егор\n" + "\tv1.4.5",
+                "О программе",
+                MessageBoxButtons.OK,
+                MessageBoxIcon.Information);
+        }
     }
 }

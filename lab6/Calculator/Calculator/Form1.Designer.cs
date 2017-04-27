@@ -34,9 +34,9 @@
             this.button10 = new System.Windows.Forms.Button();
             this.button9 = new System.Windows.Forms.Button();
             this.button8 = new System.Windows.Forms.Button();
+            this.button5 = new System.Windows.Forms.Button();
             this.button7 = new System.Windows.Forms.Button();
             this.button6 = new System.Windows.Forms.Button();
-            this.button5 = new System.Windows.Forms.Button();
             this.button4 = new System.Windows.Forms.Button();
             this.button3 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
@@ -48,12 +48,12 @@
             this.button14 = new System.Windows.Forms.Button();
             this.button13 = new System.Windows.Forms.Button();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
-            this.button22 = new System.Windows.Forms.Button();
-            this.button21 = new System.Windows.Forms.Button();
-            this.button20 = new System.Windows.Forms.Button();
-            this.button19 = new System.Windows.Forms.Button();
-            this.button18 = new System.Windows.Forms.Button();
-            this.button17 = new System.Windows.Forms.Button();
+            this.Ext = new System.Windows.Forms.Button();
+            this.Сomma = new System.Windows.Forms.Button();
+            this.Dev = new System.Windows.Forms.Button();
+            this.Mult = new System.Windows.Forms.Button();
+            this.Minus = new System.Windows.Forms.Button();
+            this.Plus = new System.Windows.Forms.Button();
             this.backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
@@ -69,7 +69,6 @@
             this.textBox1.Size = new System.Drawing.Size(318, 35);
             this.textBox1.TabIndex = 0;
             this.textBox1.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
-            this.textBox1.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
             // 
             // groupBox1
             // 
@@ -78,9 +77,9 @@
             this.groupBox1.Controls.Add(this.button10);
             this.groupBox1.Controls.Add(this.button9);
             this.groupBox1.Controls.Add(this.button8);
+            this.groupBox1.Controls.Add(this.button5);
             this.groupBox1.Controls.Add(this.button7);
             this.groupBox1.Controls.Add(this.button6);
-            this.groupBox1.Controls.Add(this.button5);
             this.groupBox1.Controls.Add(this.button4);
             this.groupBox1.Controls.Add(this.button3);
             this.groupBox1.Controls.Add(this.button2);
@@ -113,7 +112,7 @@
             this.button10.TabIndex = 2;
             this.button10.Text = "0";
             this.button10.UseVisualStyleBackColor = true;
-            this.button10.Click += new System.EventHandler(this.button10_Click);
+            this.button10.Click += new System.EventHandler(this.button0_Click);
             // 
             // button9
             // 
@@ -139,6 +138,18 @@
             this.button8.UseVisualStyleBackColor = true;
             this.button8.Click += new System.EventHandler(this.button8_Click);
             // 
+            // button5
+            // 
+            this.button5.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.button5.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.button5.Location = new System.Drawing.Point(59, 65);
+            this.button5.Name = "button5";
+            this.button5.Size = new System.Drawing.Size(47, 40);
+            this.button5.TabIndex = 4;
+            this.button5.Text = "5";
+            this.button5.UseVisualStyleBackColor = true;
+            this.button5.Click += new System.EventHandler(this.button5_Click);
+            // 
             // button7
             // 
             this.button7.Cursor = System.Windows.Forms.Cursors.Hand;
@@ -163,27 +174,15 @@
             this.button6.UseVisualStyleBackColor = true;
             this.button6.Click += new System.EventHandler(this.button6_Click);
             // 
-            // button5
-            // 
-            this.button5.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.button5.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.button5.Location = new System.Drawing.Point(112, 19);
-            this.button5.Name = "button5";
-            this.button5.Size = new System.Drawing.Size(47, 40);
-            this.button5.TabIndex = 4;
-            this.button5.Text = "3";
-            this.button5.UseVisualStyleBackColor = true;
-            this.button5.Click += new System.EventHandler(this.button5_Click);
-            // 
             // button4
             // 
             this.button4.Cursor = System.Windows.Forms.Cursors.Hand;
             this.button4.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.button4.Location = new System.Drawing.Point(59, 65);
+            this.button4.Location = new System.Drawing.Point(6, 65);
             this.button4.Name = "button4";
             this.button4.Size = new System.Drawing.Size(47, 40);
             this.button4.TabIndex = 3;
-            this.button4.Text = "5";
+            this.button4.Text = "4";
             this.button4.UseVisualStyleBackColor = true;
             this.button4.Click += new System.EventHandler(this.button4_Click);
             // 
@@ -191,11 +190,11 @@
             // 
             this.button3.Cursor = System.Windows.Forms.Cursors.Hand;
             this.button3.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.button3.Location = new System.Drawing.Point(6, 65);
+            this.button3.Location = new System.Drawing.Point(112, 19);
             this.button3.Name = "button3";
             this.button3.Size = new System.Drawing.Size(47, 40);
             this.button3.TabIndex = 2;
-            this.button3.Text = "4";
+            this.button3.Text = "3";
             this.button3.UseVisualStyleBackColor = true;
             this.button3.Click += new System.EventHandler(this.button3_Click);
             // 
@@ -300,89 +299,101 @@
             // 
             // groupBox3
             // 
-            this.groupBox3.Controls.Add(this.button22);
-            this.groupBox3.Controls.Add(this.button21);
-            this.groupBox3.Controls.Add(this.button20);
-            this.groupBox3.Controls.Add(this.button19);
-            this.groupBox3.Controls.Add(this.button18);
-            this.groupBox3.Controls.Add(this.button17);
+            this.groupBox3.Controls.Add(this.Ext);
+            this.groupBox3.Controls.Add(this.Сomma);
+            this.groupBox3.Controls.Add(this.Dev);
+            this.groupBox3.Controls.Add(this.Mult);
+            this.groupBox3.Controls.Add(this.Minus);
+            this.groupBox3.Controls.Add(this.Plus);
             this.groupBox3.Location = new System.Drawing.Point(188, 134);
             this.groupBox3.Name = "groupBox3";
             this.groupBox3.Size = new System.Drawing.Size(142, 206);
             this.groupBox3.TabIndex = 4;
             this.groupBox3.TabStop = false;
             // 
-            // button22
+            // Ext
             // 
-            this.button22.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.button22.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.button22.Location = new System.Drawing.Point(75, 142);
-            this.button22.Name = "button22";
-            this.button22.Size = new System.Drawing.Size(59, 55);
-            this.button22.TabIndex = 14;
-            this.button22.Text = "^";
-            this.button22.UseVisualStyleBackColor = true;
-            this.button22.Click += new System.EventHandler(this.button22_Click);
+            this.Ext.BackColor = System.Drawing.SystemColors.AppWorkspace;
+            this.Ext.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.Ext.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.Ext.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.Ext.Location = new System.Drawing.Point(75, 140);
+            this.Ext.Name = "Ext";
+            this.Ext.Size = new System.Drawing.Size(60, 60);
+            this.Ext.TabIndex = 14;
+            this.Ext.Text = "^";
+            this.Ext.UseVisualStyleBackColor = false;
+            this.Ext.Click += new System.EventHandler(this.button22_Click);
             // 
-            // button21
+            // Сomma
             // 
-            this.button21.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.button21.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.button21.Location = new System.Drawing.Point(7, 142);
-            this.button21.Name = "button21";
-            this.button21.Size = new System.Drawing.Size(59, 55);
-            this.button21.TabIndex = 13;
-            this.button21.Text = ",";
-            this.button21.UseVisualStyleBackColor = true;
-            this.button21.Click += new System.EventHandler(this.button21_Click);
+            this.Сomma.BackColor = System.Drawing.SystemColors.AppWorkspace;
+            this.Сomma.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.Сomma.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.Сomma.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.Сomma.Location = new System.Drawing.Point(7, 140);
+            this.Сomma.Name = "Сomma";
+            this.Сomma.Size = new System.Drawing.Size(60, 60);
+            this.Сomma.TabIndex = 13;
+            this.Сomma.Text = ",";
+            this.Сomma.UseVisualStyleBackColor = false;
+            this.Сomma.Click += new System.EventHandler(this.button21_Click);
             // 
-            // button20
+            // Dev
             // 
-            this.button20.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.button20.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.button20.Location = new System.Drawing.Point(75, 76);
-            this.button20.Name = "button20";
-            this.button20.Size = new System.Drawing.Size(59, 56);
-            this.button20.TabIndex = 12;
-            this.button20.Text = "/";
-            this.button20.UseVisualStyleBackColor = true;
-            this.button20.Click += new System.EventHandler(this.button20_Click);
+            this.Dev.BackColor = System.Drawing.SystemColors.AppWorkspace;
+            this.Dev.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.Dev.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.Dev.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.Dev.Location = new System.Drawing.Point(75, 76);
+            this.Dev.Name = "Dev";
+            this.Dev.Size = new System.Drawing.Size(60, 60);
+            this.Dev.TabIndex = 12;
+            this.Dev.Text = "/";
+            this.Dev.UseVisualStyleBackColor = false;
+            this.Dev.Click += new System.EventHandler(this.button20_Click);
             // 
-            // button19
+            // Mult
             // 
-            this.button19.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.button19.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.button19.Location = new System.Drawing.Point(7, 76);
-            this.button19.Name = "button19";
-            this.button19.Size = new System.Drawing.Size(59, 56);
-            this.button19.TabIndex = 11;
-            this.button19.Text = "*";
-            this.button19.UseVisualStyleBackColor = true;
-            this.button19.Click += new System.EventHandler(this.button19_Click);
+            this.Mult.BackColor = System.Drawing.SystemColors.AppWorkspace;
+            this.Mult.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.Mult.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.Mult.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.Mult.Location = new System.Drawing.Point(7, 75);
+            this.Mult.Name = "Mult";
+            this.Mult.Size = new System.Drawing.Size(60, 60);
+            this.Mult.TabIndex = 11;
+            this.Mult.Text = "*";
+            this.Mult.UseVisualStyleBackColor = false;
+            this.Mult.Click += new System.EventHandler(this.button19_Click);
             // 
-            // button18
+            // Minus
             // 
-            this.button18.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.button18.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.button18.Location = new System.Drawing.Point(75, 12);
-            this.button18.Name = "button18";
-            this.button18.Size = new System.Drawing.Size(59, 55);
-            this.button18.TabIndex = 10;
-            this.button18.Text = "-";
-            this.button18.UseVisualStyleBackColor = true;
-            this.button18.Click += new System.EventHandler(this.button18_Click);
+            this.Minus.BackColor = System.Drawing.SystemColors.AppWorkspace;
+            this.Minus.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.Minus.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.Minus.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.Minus.Location = new System.Drawing.Point(75, 12);
+            this.Minus.Name = "Minus";
+            this.Minus.Size = new System.Drawing.Size(60, 60);
+            this.Minus.TabIndex = 10;
+            this.Minus.Text = "-";
+            this.Minus.UseVisualStyleBackColor = false;
+            this.Minus.Click += new System.EventHandler(this.Minus_Click);
             // 
-            // button17
+            // Plus
             // 
-            this.button17.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.button17.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.button17.Location = new System.Drawing.Point(7, 12);
-            this.button17.Name = "button17";
-            this.button17.Size = new System.Drawing.Size(59, 55);
-            this.button17.TabIndex = 9;
-            this.button17.Text = "+";
-            this.button17.UseVisualStyleBackColor = true;
-            this.button17.Click += new System.EventHandler(this.button17_Click);
+            this.Plus.BackColor = System.Drawing.SystemColors.AppWorkspace;
+            this.Plus.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.Plus.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.Plus.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.Plus.Location = new System.Drawing.Point(7, 12);
+            this.Plus.Name = "Plus";
+            this.Plus.Size = new System.Drawing.Size(60, 60);
+            this.Plus.TabIndex = 9;
+            this.Plus.Text = "+";
+            this.Plus.UseVisualStyleBackColor = false;
+            this.Plus.Click += new System.EventHandler(this.Plus_Click);
             // 
             // Form1
             // 
@@ -429,13 +440,13 @@
         private System.Windows.Forms.Button button14;
         private System.Windows.Forms.Button button13;
         private System.Windows.Forms.GroupBox groupBox3;
-        private System.Windows.Forms.Button button21;
-        private System.Windows.Forms.Button button20;
-        private System.Windows.Forms.Button button19;
-        private System.Windows.Forms.Button button18;
-        private System.Windows.Forms.Button button17;
+        private System.Windows.Forms.Button Сomma;
+        private System.Windows.Forms.Button Dev;
+        private System.Windows.Forms.Button Mult;
+        private System.Windows.Forms.Button Minus;
+        private System.Windows.Forms.Button Plus;
         private System.ComponentModel.BackgroundWorker backgroundWorker1;
-        private System.Windows.Forms.Button button22;
+        private System.Windows.Forms.Button Ext;
     }
 }
 
