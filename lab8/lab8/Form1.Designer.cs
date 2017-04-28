@@ -64,23 +64,22 @@
             this.Button_ReadFromJSON = new System.Windows.Forms.Button();
             this.saveFileDialog1 = new System.Windows.Forms.SaveFileDialog();
             this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
-            this.clear = new System.Windows.Forms.Button();
+            this.Button_ClearAirplane = new System.Windows.Forms.Button();
             this.ToolTip = new System.Windows.Forms.ToolTip(this.components);
             this.Error = new System.Windows.Forms.ErrorProvider(this.components);
-            this.TextBox_JSON = new System.Windows.Forms.RichTextBox();
             this.menuStrip = new System.Windows.Forms.MenuStrip();
-            this.поискToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.ToolStripMenuItem_type = new System.Windows.Forms.ToolStripMenuItem();
-            this.ToolStripMenuItem_seats = new System.Windows.Forms.ToolStripMenuItem();
-            this.ToolStripMenuItem_сarrying = new System.Windows.Forms.ToolStripMenuItem();
-            this.сортировкаToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.Search_ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.Search_ToolStripMenuItem_type = new System.Windows.Forms.ToolStripMenuItem();
+            this.Search_ToolStripMenuItem_seats = new System.Windows.Forms.ToolStripMenuItem();
+            this.Search_ToolStripMenuItem_сarrying = new System.Windows.Forms.ToolStripMenuItem();
+            this.Sort_ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.Sort_ToolStripMenuItem_nameCapitan = new System.Windows.Forms.ToolStripMenuItem();
             this.Sort_ToolStripMenuItem_nameSecondPilot = new System.Windows.Forms.ToolStripMenuItem();
-            this.Sort_ToolStripMenuItem_ = new System.Windows.Forms.ToolStripMenuItem();
+            this.Sort_ToolStripMenuItem_TO = new System.Windows.Forms.ToolStripMenuItem();
             this.AboutToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.DataGridAirplane = new System.Windows.Forms.DataGridView();
-            this.airportBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.DataGridMember = new System.Windows.Forms.DataGridView();
+            this.airportBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.TrackBar_Carrying)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.NumericUpDown_yearIssue)).BeginInit();
@@ -90,8 +89,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.Error)).BeginInit();
             this.menuStrip.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.DataGridAirplane)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.airportBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.DataGridMember)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.airportBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // TextBox_ID
@@ -524,36 +523,28 @@
             this.openFileDialog1.Filter = "Json файлы|*.json";
             this.openFileDialog1.FileOk += new System.ComponentModel.CancelEventHandler(this.openFileDialog1_FileOk);
             // 
-            // clear
+            // Button_ClearAirplane
             // 
-            this.clear.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.clear.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.clear.Location = new System.Drawing.Point(436, 39);
-            this.clear.Name = "clear";
-            this.clear.Size = new System.Drawing.Size(393, 25);
-            this.clear.TabIndex = 10;
-            this.clear.Text = "очистить";
-            this.clear.UseVisualStyleBackColor = true;
-            this.clear.Click += new System.EventHandler(this.clear_Click);
+            this.Button_ClearAirplane.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.Button_ClearAirplane.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.Button_ClearAirplane.Location = new System.Drawing.Point(1106, 434);
+            this.Button_ClearAirplane.Name = "Button_ClearAirplane";
+            this.Button_ClearAirplane.Size = new System.Drawing.Size(190, 40);
+            this.Button_ClearAirplane.TabIndex = 10;
+            this.Button_ClearAirplane.Text = "очистить";
+            this.Button_ClearAirplane.UseVisualStyleBackColor = true;
+            this.Button_ClearAirplane.Click += new System.EventHandler(this.clear_Click);
             // 
             // Error
             // 
             this.Error.BlinkStyle = System.Windows.Forms.ErrorBlinkStyle.NeverBlink;
             this.Error.ContainerControl = this;
             // 
-            // TextBox_JSON
-            // 
-            this.TextBox_JSON.Location = new System.Drawing.Point(862, 434);
-            this.TextBox_JSON.Name = "TextBox_JSON";
-            this.TextBox_JSON.Size = new System.Drawing.Size(393, 48);
-            this.TextBox_JSON.TabIndex = 20;
-            this.TextBox_JSON.Text = "";
-            // 
             // menuStrip
             // 
             this.menuStrip.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.поискToolStripMenuItem,
-            this.сортировкаToolStripMenuItem,
+            this.Search_ToolStripMenuItem,
+            this.Sort_ToolStripMenuItem,
             this.AboutToolStripMenuItem});
             this.menuStrip.Location = new System.Drawing.Point(0, 0);
             this.menuStrip.Name = "menuStrip";
@@ -561,43 +552,46 @@
             this.menuStrip.TabIndex = 21;
             this.menuStrip.Text = "menuStrip1";
             // 
-            // поискToolStripMenuItem
+            // Search_ToolStripMenuItem
             // 
-            this.поискToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.ToolStripMenuItem_type,
-            this.ToolStripMenuItem_seats,
-            this.ToolStripMenuItem_сarrying});
-            this.поискToolStripMenuItem.Name = "поискToolStripMenuItem";
-            this.поискToolStripMenuItem.Size = new System.Drawing.Size(54, 20);
-            this.поискToolStripMenuItem.Text = "Поиск";
+            this.Search_ToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.Search_ToolStripMenuItem_type,
+            this.Search_ToolStripMenuItem_seats,
+            this.Search_ToolStripMenuItem_сarrying});
+            this.Search_ToolStripMenuItem.Name = "Search_ToolStripMenuItem";
+            this.Search_ToolStripMenuItem.Size = new System.Drawing.Size(54, 20);
+            this.Search_ToolStripMenuItem.Text = "Поиск";
             // 
-            // ToolStripMenuItem_type
+            // Search_ToolStripMenuItem_type
             // 
-            this.ToolStripMenuItem_type.Name = "ToolStripMenuItem_type";
-            this.ToolStripMenuItem_type.Size = new System.Drawing.Size(177, 22);
-            this.ToolStripMenuItem_type.Text = "тип";
+            this.Search_ToolStripMenuItem_type.Name = "Search_ToolStripMenuItem_type";
+            this.Search_ToolStripMenuItem_type.Size = new System.Drawing.Size(177, 22);
+            this.Search_ToolStripMenuItem_type.Text = "тип";
+            this.Search_ToolStripMenuItem_type.Click += new System.EventHandler(this.Search_ToolStripMenuItem_type_Click);
             // 
-            // ToolStripMenuItem_seats
+            // Search_ToolStripMenuItem_seats
             // 
-            this.ToolStripMenuItem_seats.Name = "ToolStripMenuItem_seats";
-            this.ToolStripMenuItem_seats.Size = new System.Drawing.Size(177, 22);
-            this.ToolStripMenuItem_seats.Text = "количество мест";
+            this.Search_ToolStripMenuItem_seats.Name = "Search_ToolStripMenuItem_seats";
+            this.Search_ToolStripMenuItem_seats.Size = new System.Drawing.Size(177, 22);
+            this.Search_ToolStripMenuItem_seats.Text = "количество мест";
+            this.Search_ToolStripMenuItem_seats.Click += new System.EventHandler(this.Search_ToolStripMenuItem_seats_Click);
             // 
-            // ToolStripMenuItem_сarrying
+            // Search_ToolStripMenuItem_сarrying
             // 
-            this.ToolStripMenuItem_сarrying.Name = "ToolStripMenuItem_сarrying";
-            this.ToolStripMenuItem_сarrying.Size = new System.Drawing.Size(177, 22);
-            this.ToolStripMenuItem_сarrying.Text = "грузоподъёмность";
+            this.Search_ToolStripMenuItem_сarrying.Name = "Search_ToolStripMenuItem_сarrying";
+            this.Search_ToolStripMenuItem_сarrying.Size = new System.Drawing.Size(177, 22);
+            this.Search_ToolStripMenuItem_сarrying.Text = "грузоподъёмность";
+            this.Search_ToolStripMenuItem_сarrying.Click += new System.EventHandler(this.Search_ToolStripMenuItem_сarrying_Click);
             // 
-            // сортировкаToolStripMenuItem
+            // Sort_ToolStripMenuItem
             // 
-            this.сортировкаToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.Sort_ToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.Sort_ToolStripMenuItem_nameCapitan,
             this.Sort_ToolStripMenuItem_nameSecondPilot,
-            this.Sort_ToolStripMenuItem_});
-            this.сортировкаToolStripMenuItem.Name = "сортировкаToolStripMenuItem";
-            this.сортировкаToolStripMenuItem.Size = new System.Drawing.Size(85, 20);
-            this.сортировкаToolStripMenuItem.Text = "Сортировка";
+            this.Sort_ToolStripMenuItem_TO});
+            this.Sort_ToolStripMenuItem.Name = "Sort_ToolStripMenuItem";
+            this.Sort_ToolStripMenuItem.Size = new System.Drawing.Size(85, 20);
+            this.Sort_ToolStripMenuItem.Text = "Сортировка";
             // 
             // Sort_ToolStripMenuItem_nameCapitan
             // 
@@ -611,11 +605,12 @@
             this.Sort_ToolStripMenuItem_nameSecondPilot.Size = new System.Drawing.Size(190, 22);
             this.Sort_ToolStripMenuItem_nameSecondPilot.Text = "ФИО второго пилота";
             // 
-            // Sort_ToolStripMenuItem_
+            // Sort_ToolStripMenuItem_TO
             // 
-            this.Sort_ToolStripMenuItem_.Name = "Sort_ToolStripMenuItem_";
-            this.Sort_ToolStripMenuItem_.Size = new System.Drawing.Size(190, 22);
-            this.Sort_ToolStripMenuItem_.Text = "Дата последнего ТО";
+            this.Sort_ToolStripMenuItem_TO.Name = "Sort_ToolStripMenuItem_TO";
+            this.Sort_ToolStripMenuItem_TO.Size = new System.Drawing.Size(190, 22);
+            this.Sort_ToolStripMenuItem_TO.Text = "Дата последнего ТО";
+            this.Sort_ToolStripMenuItem_TO.Click += new System.EventHandler(this.Sort_ToolStripMenuItem_TO_Click);
             // 
             // AboutToolStripMenuItem
             // 
@@ -627,23 +622,23 @@
             // DataGridAirplane
             // 
             this.DataGridAirplane.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.DataGridAirplane.Location = new System.Drawing.Point(436, 80);
+            this.DataGridAirplane.Location = new System.Drawing.Point(436, 12);
             this.DataGridAirplane.Name = "DataGridAirplane";
             this.DataGridAirplane.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
-            this.DataGridAirplane.Size = new System.Drawing.Size(860, 122);
+            this.DataGridAirplane.Size = new System.Drawing.Size(860, 219);
             this.DataGridAirplane.TabIndex = 22;
-            // 
-            // airportBindingSource
-            // 
-            this.airportBindingSource.DataSource = typeof(lab7.Airport);
             // 
             // DataGridMember
             // 
             this.DataGridMember.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.DataGridMember.Location = new System.Drawing.Point(436, 267);
+            this.DataGridMember.Location = new System.Drawing.Point(436, 237);
             this.DataGridMember.Name = "DataGridMember";
-            this.DataGridMember.Size = new System.Drawing.Size(715, 135);
+            this.DataGridMember.Size = new System.Drawing.Size(860, 191);
             this.DataGridMember.TabIndex = 23;
+            // 
+            // airportBindingSource
+            // 
+            this.airportBindingSource.DataSource = typeof(lab7.Airport);
             // 
             // MainForm
             // 
@@ -652,9 +647,8 @@
             this.ClientSize = new System.Drawing.Size(1301, 486);
             this.Controls.Add(this.DataGridMember);
             this.Controls.Add(this.DataGridAirplane);
-            this.Controls.Add(this.TextBox_JSON);
             this.Controls.Add(this.groupBox2);
-            this.Controls.Add(this.clear);
+            this.Controls.Add(this.Button_ClearAirplane);
             this.Controls.Add(this.Button_ReadFromJSON);
             this.Controls.Add(this.Button_SaveToJSON);
             this.Controls.Add(this.groupBox1);
@@ -664,7 +658,7 @@
             this.MaximizeBox = false;
             this.Name = "MainForm";
             this.RightToLeftLayout = true;
-            this.Text = "lab7";
+            this.Text = "lab8";
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.TrackBar_Carrying)).EndInit();
@@ -677,8 +671,8 @@
             this.menuStrip.ResumeLayout(false);
             this.menuStrip.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.DataGridAirplane)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.airportBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.DataGridMember)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.airportBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -715,7 +709,7 @@
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.SaveFileDialog saveFileDialog1;
         private System.Windows.Forms.OpenFileDialog openFileDialog1;
-        private System.Windows.Forms.Button clear;
+        private System.Windows.Forms.Button Button_ClearAirplane;
         private System.Windows.Forms.NumericUpDown NumericUpDown_exp;
         private System.Windows.Forms.NumericUpDown NumericUpDown_age;
         private System.Windows.Forms.Button Button_AddAirplane;
@@ -724,16 +718,15 @@
         private System.Windows.Forms.ToolTip ToolTip;
         private System.Windows.Forms.ErrorProvider Error;
         private System.Windows.Forms.Label CarryingСapacity;
-        private System.Windows.Forms.RichTextBox TextBox_JSON;
         private System.Windows.Forms.MenuStrip menuStrip;
-        private System.Windows.Forms.ToolStripMenuItem поискToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem ToolStripMenuItem_type;
-        private System.Windows.Forms.ToolStripMenuItem ToolStripMenuItem_seats;
-        private System.Windows.Forms.ToolStripMenuItem ToolStripMenuItem_сarrying;
-        private System.Windows.Forms.ToolStripMenuItem сортировкаToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem Search_ToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem Search_ToolStripMenuItem_type;
+        private System.Windows.Forms.ToolStripMenuItem Search_ToolStripMenuItem_seats;
+        private System.Windows.Forms.ToolStripMenuItem Search_ToolStripMenuItem_сarrying;
+        private System.Windows.Forms.ToolStripMenuItem Sort_ToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem Sort_ToolStripMenuItem_nameCapitan;
         private System.Windows.Forms.ToolStripMenuItem Sort_ToolStripMenuItem_nameSecondPilot;
-        private System.Windows.Forms.ToolStripMenuItem Sort_ToolStripMenuItem_;
+        private System.Windows.Forms.ToolStripMenuItem Sort_ToolStripMenuItem_TO;
         private System.Windows.Forms.ToolStripMenuItem AboutToolStripMenuItem;
         private System.Windows.Forms.DataGridView DataGridAirplane;
         private System.Windows.Forms.BindingSource airportBindingSource;

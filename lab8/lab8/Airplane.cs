@@ -10,15 +10,15 @@ using System.Collections;
 
 namespace lab7
 {
-    class Airplane
+    public class Airplane
     {
-        public List<Member> listMember;
-        public Int16 Id { get; set; }
+        public List<Member> listMember = new List<Member>();
+        public UInt16 Id { get; set; }
         public String Type { get; set; }
         public String Model { get; set; }
-        public Int16 Year_of_issue { get; set; }
-        public Int16 Seats { get; set; }
-        public Int16 Carrying { get; set; }
+        public UInt16 Year_of_issue { get; set; }
+        public UInt16 Seats { get; set; }
+        public UInt16 Carrying { get; set; }
         public String Maintenance { get; set; }
 
         public void Add(Member member)
@@ -54,12 +54,9 @@ namespace lab7
             }
         }
 
-        public Airplane()
-        {
-            new List<Member>();
-        }
+        public Airplane() { }
 
-        public Airplane(Int16 id, String type, String model, Int16 year_of_issue, Int16 seats, Int16 carrying, String maintenance)
+        public Airplane(UInt16 id, String type, String model, UInt16 year_of_issue, UInt16 seats, UInt16 carrying, String maintenance)
         {
             Id = id;
             Type = type;
@@ -69,19 +66,6 @@ namespace lab7
             Carrying = carrying;
             Maintenance = maintenance;
         }
-
-        public override string ToString()
-        {
-            string result;
-            result = "ID: " + Id + '\t' +
-                     "Type: " + Type + "\t" +
-                     "Model: " + Model + "\t" +
-                     "Year issue: " + Year_of_issue + "\t" +
-                     "Seats: " + Seats + "\t" +
-                     "Carrying: " + Carrying + "\t" +
-                     "Maintenance: " + Maintenance + "\t";
-            return result;
-        }
-
+     
     }
 }
